@@ -4,6 +4,7 @@
   z-index: -2;
   background: radial-gradient(ellipse at center, #527a50 25%, #334d32 100%);
   min-width: 100%;
+  min-height: 100%;
 }
 
 .App::after {
@@ -66,6 +67,7 @@ font-size: larger;
 }
 .StatsBar{
   display:flex;
+  flex:4;
   justify-content: space-evenly;
   flex-direction: row;
 }
@@ -75,10 +77,15 @@ font-size: larger;
   border-bottom: #527a50;
   border-width: 3px;
   border-top: #527a50;
+  justify-content: space-between;
+  align-content: space-between;
 }
+
 .loadingScreenContent{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-content: space-evenly;
 }
 .loadingScreenCompanyInfo{
   display: flex;
@@ -87,6 +94,8 @@ font-size: larger;
 .statsmainContent{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
 }
 .statsMid{
   display: flex;
@@ -94,7 +103,12 @@ font-size: larger;
   align-content: center;
   justify-content: space-evenly;
 }
-
+.statsTop{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
