@@ -1,16 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import statsimg from './fixedPip.gif'
+import axios from 'axios'
 const backgroundGreen = '#334d32'
 const pages = ['Status', 'S.P.E.C.I.A.L', 'Skills', 'Perks', 'General']
 const statsSubPages = ['CND', 'RAD', 'EFF']
-const Stats = { 'PLayerName': "Kaydon Stubbs", 'LVL': 10, 'HPCUR': 350, 'HPMAX': 400, 'APAVAILABLE': 300, 'APMAX': 300, 'XPERNED': 147, 'XPNEEDED': 1100 }
+// const Stats = { 'PlayerName': "Kaydon Stubbs", 'LVL': 10, 'HPCUR': 350, 'HPMAX': 400, 'APAVAILABLE': 300, 'APMAX': 300, 'XPERNED': 147, 'XPNEEDED': 1100 }
 function App() {
   const [page, setPage] = useState(pages[0])
+  const [Stats , setStats]=useState('')
   const changePage = (e) => {
     setPage(e.target.value)
   }
+  useEffect(async ()=>{
+    let stats = await axios.get('http://localhost:5001/user/tasha/')
+    console.log(stats)
+    setStats(stats.data)
+  },[])
   return (
     <div className="App">
       {page === pages[0] && <>
@@ -33,7 +39,7 @@ function App() {
         </div>
         <div className='StatsImage'>
           <img src={statsimg}></img>
-          <h2>{Stats.PLayerName + " - LEVEL" + Stats.LVL}</h2>
+          <h2>{Stats.PlayerName + " - LEVEL" + Stats.LVL}</h2>
         </div>
         <div className='NavBar'>
         <div className="separator">____________</div>
