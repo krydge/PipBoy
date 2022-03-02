@@ -1,7 +1,9 @@
 .App {
   text-align: center;
-  min-height: 100vh;
-  min-width: 100vh;
+  position: absolute;
+  z-index: -2;
+  min-height: 200vh;
+  min-width: 200vh;
   background: radial-gradient(ellipse at center, #527a50 25%, #334d32 100%);
   
 }
@@ -20,6 +22,7 @@
 .App::after {
   content:"";
   position: absolute;
+  z-index: -1;
   width:200vw;
   height: 200vh;
   left: -50%;
