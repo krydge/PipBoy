@@ -9,11 +9,11 @@ const Stats = { 'PLayerName': "Kaydon Stubbs", 'LVL': 10, 'HPCUR': 350, 'HPMAX':
 function App() {
   const [page, setPage] = useState(pages[0])
   const changePage = (e) => {
-    e.preventDeafault()
-
+    setPage(e.target.value)
   }
   return (
     <div className="App">
+      {page===pages[0]&&<>
       <div>{page}</div>
       <div className="StatsSubPages">
         {statsSubPages?.map((subPage) =>
@@ -32,11 +32,22 @@ function App() {
         <h2>{Stats.PLayerName + " - LEVEL" + Stats.LVL}</h2>
       </div>
       <div className='NavBar'>
-        {pages?.map((mainPages) =>
+        {pages?.map((mainPage) =>
           <>
-            <button>{mainPages}</button>
+            <button onClick={changePage} value={mainPage}>{mainPage}</button>
           </>)}
       </div>
+      </>
+}
+{page!=pages[0]&&<>
+      <div>{page}</div>
+      <div className='NavBar'>
+        {pages?.map((mainPage) =>
+          <>
+            <button onClick={changePage} value={mainPage}>{mainPage}</button>
+          </>)}
+      </div>
+      </>}
     </div>
   );
 }
