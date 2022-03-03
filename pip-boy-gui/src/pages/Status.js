@@ -1,26 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import statsimg from '../fixedPip.gif'
+import StatsTop from "./StatsTop";
 
 function Status(props){
     const [Stats, setStats] = useState(props.stats)
     const [page , setPage]= useState(props.page)
     const statsSubPages = ['CND', 'RAD', 'EFF']
+useEffect(()=>{
 
+},[props])
     return(
         <div className="statsmainContent">
-          <div className='statsTop'>
-            <div>{page}</div>
-            <div className="StatsBar">
-              <div className="separator">____________</div>
-              <h3>LVL {Stats.LVL}</h3>
-              <div className="separator">____________</div>
-              <h3>HP {Stats.HPCUR + "/" + Stats.HPMAX}</h3>
-              <div className="separator">____________</div>
-              <h3>AP {Stats.APAVAILABLE + "/" + Stats.APMAX}</h3>
-              <div className="separator">____________</div>
-              <h3>XP {Stats.XPERNED + "/" + Stats.XPNEEDED}</h3><div className="separator">____________</div>
-            </div>
-          </div>
+          <StatsTop page={page} Stats={Stats}></StatsTop>
           <div className='statsMid'>
             <div className="StatsSubPages">
               {statsSubPages?.map((subPage) =>

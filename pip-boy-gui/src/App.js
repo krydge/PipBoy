@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import LoadingPage from './pages/loadingPage';
 import axios from 'axios'
 import Status from './pages/Status';
+import SpecialPage from './pages/SPECIALPage';
+import SkillsPage from './pages/SkillsPage';
 const backgroundGreen = '#334d32'
 const pages = ['Status', 'S.P.E.C.I.A.L', 'Skills', 'Perks', 'General']
 
@@ -31,32 +33,40 @@ function App() {
       {firstload === false &&
         <LoadingPage></LoadingPage>
       }
-      {firstload === true && page === pages[0] && 
-      <>
-        <Status stats={Stats} page ={page}></Status>
-        <div className='NavBar'>
+      {firstload === true && page === pages[0] &&
+        <>
+          <Status stats={Stats} page={page}></Status>
+        </>
+      }
+      {firstload === true && page === pages[1] &&
+        <>
+          <SpecialPage stats={Stats} page={page}></SpecialPage>
+        </>
+      }
+      {firstload === true && page === pages[2] &&
+        <>
+          <SkillsPage stats={Stats} page={page}></SkillsPage>
+        </>
+      }
+            {firstload === true && page === pages[3] &&
+        <>
+          <SkillsPage stats={Stats} page={page}></SkillsPage>
+        </>
+      }
+            {firstload === true && page === pages[4] &&
+        <>
+          <SkillsPage stats={Stats} page={page}></SkillsPage>
+        </>
+      }
+
+      <div className='NavBar'>
+        <div className="separator">____________</div>
+        {pages?.map((mainPage) =>
+          <>
+            <button onClick={changePage} value={mainPage} key={mainPage}>{mainPage}</button>
             <div className="separator">____________</div>
-            {pages?.map((mainPage) =>
-              <>
-                <button onClick={changePage} value={mainPage} key={mainPage}>{mainPage}</button>
-                <div className="separator">____________</div>
-              </>)}
-          </div>
-      </>
-      }
-      {firstload === true && page != pages[0] && 
-      <>
-        <div>{page}</div>
-        <div className='NavBar'>
-          <div className="separator">____________</div>
-          {pages?.map((mainPage) =>
-            <>
-              <button onClick={changePage} value={mainPage} key={mainPage}>{mainPage}</button>
-              <div className="separator">____________</div>
-            </>)}
-        </div>
-      </>
-      }
+          </>)}
+      </div>
 
     </div>
   );
