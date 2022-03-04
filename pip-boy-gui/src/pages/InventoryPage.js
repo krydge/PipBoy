@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import statsimg from '../fixedPip.gif'
 import StatsTop from "./StatsTop";
 
-function PerksPage(props){
+function InventoryPage(props){
     const [Stats, setStats] = useState(props.stats)
     const [page , setPage]= useState(props.page)
     
@@ -19,4 +19,4 @@ useEffect(()=>{
     )
 }
 
-export default PerksPage;
+export default InventoryPage;
