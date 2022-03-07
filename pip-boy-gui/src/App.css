@@ -109,6 +109,10 @@ font-size: larger;
   align-content: center;
   justify-content: space-evenly;
 }
+
+button.highlightButton{
+  background-color: #527a50;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

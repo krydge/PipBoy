@@ -2,11 +2,11 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import LoadingPage from './pages/loadingPage';
 import axios from 'axios'
-import Status from './pages/Status';
+import StatusPage from './pages/StatusPage';
 import SpecialPage from './pages/SPECIALPage';
 import SkillsPage from './pages/SkillsPage';
 const backgroundGreen = '#334d32'
-const pages = ['Status', 'S.P.E.C.I.A.L', 'Skills', 'Perks', 'General']
+const pages = ['Status', 'S.P.E.C.I.A.L', 'Skills', 'Inventory', 'General']
 
 // const Stats = { 'PlayerName': "Kaydon Stubbs", 'LVL': 10, 'HPCUR': 350, 'HPMAX': 400, 'APAVAILABLE': 300, 'APMAX': 300, 'XPERNED': 147, 'XPNEEDED': 1100 }
 
@@ -35,7 +35,7 @@ function App() {
       }
       {firstload === true && page === pages[0] &&
         <>
-          <Status stats={Stats} page={page}></Status>
+          <StatusPage stats={Stats} page={page}></StatusPage>
         </>
       }
       {firstload === true && page === pages[1] &&
