@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-function ToDo(){
+function ToDo() {
 
-    const [data, setData] = useState([{ key: "0", name: "Eat a hot dog", description: "Eat a juicy hot dog", complete: false }, { key: "1", name: "Eat a hamburger", description: "Eat a juicy hamburger", complete: false }])
+    const [data, setData] = useState([])
     const [formData, setFormData] = useState({})
     function markComplete(key) {
         let newdata = []
@@ -28,7 +28,7 @@ function ToDo(){
         setData([...data, { key: data.length, name: name, description: description, complete: false }])
         setFormData({})
     }
-    return(
+    return (
         <div>
             <div>
                 <form onSubmit={handleSubmit}>
@@ -72,7 +72,7 @@ function ToDo(){
                     </li>}
                 </div>)}
             </ol>
-            </div>
+        </div>
     )
 }
 

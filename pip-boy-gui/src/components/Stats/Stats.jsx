@@ -3,10 +3,11 @@ import { useState } from 'react';
 import StatsMenu from '../StatsMenu/StatsMenu';
 import ToDo from '../ToDo/ToDo';
 import ATM from '../ATM/ATM';
+import FoodTracker from '../FoodTracker/FoodTracker';
 
 function Stats() {
     const [page, setPage] = useState("ToDo")
-    console.log(page)
+
     return (
         <div className="StatsPage">
             {page === "ToDo" &&
@@ -14,6 +15,9 @@ function Stats() {
             }
             {page === "ATM" &&
                 <ATM />
+            }
+            {page === "FoodIntake" &&
+                <FoodTracker />
             }
             <StatsMenu parentCallBack={setPage} />
         </div>)
