@@ -9,13 +9,13 @@ function App() {
 
   return (
     <div className="App">
+      <PipMenu parentCallBack={setPage} />
       {page === "stats" &&
         <Stats />
       }
       {page === "apps" &&
         <Applications />
       }
-      <PipMenu parentCallBack={setPage} />
     </div>
   );
 }
