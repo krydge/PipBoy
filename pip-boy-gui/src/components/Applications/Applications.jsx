@@ -9,12 +9,18 @@ function Applications() {
     console.log(page)
     return (
         <div className="Applications">
-            {page==="Notes" &&
-            <NotesApp/>
-    }
-    {page==="Maps" &&
-            <Maps/>
-    }
+            {page === "Notes" &&
+                <NotesApp />
+            }
+            {page === "Maps" &&
+                <Maps />
+            }
+            {page === "Weather" &&
+                <p>Weather</p>
+            }
+            {page === "Radio" &&
+                <p>Radio</p>
+            }
             <ApplicationsMenu parentCallBack={setPage} />
         </div>
     )
